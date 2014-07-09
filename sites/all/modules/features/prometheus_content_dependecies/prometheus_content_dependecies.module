@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Prometheus Content + Dependecies feature.
+ */
+
+include_once 'prometheus_content_dependecies.features.inc';
