@@ -24,10 +24,17 @@ $pad: 35px;
 .region-menu {
   float: left;
   width: 100%;
-  @include breakpoint($desk) {
-    width: 50%;
+}
+
+@include breakpoint($desk) {
+  .region-branding {
+    width: 20%;
+  }
+  .region-menu {
+    width: 80%;
   }
 }
+
 
 
 @include breakpoint($tab) {
