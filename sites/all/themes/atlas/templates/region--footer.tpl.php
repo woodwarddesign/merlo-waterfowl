@@ -30,5 +30,5 @@
 ?>
   <div class="<?php print $classes; ?>">
     <?php print $content; ?>
-    <div class="copyright"><p>Copyright &copy; <?php echo(date("Y",time ())); ?> Your Company, Inc. All Rights Reserved.</p></div>
+    <div class="copyright"><p>Copyright &copy; <?php echo(date("Y",time ())); ?> Merlo Waterfowl Company. All Rights Reserved.</p><p>(530) 894-DUCK (3825)</p></div>
   </div>
