@@ -8,6 +8,7 @@ stylesheets[all][] = css/styles.css
 ; Add JavaScript (added in template.php, so this is commented out)
 ;scripts[] = js/script.js
 
+regions[top] = Top
 regions[branding]       = Branding
 regions[menu]           = Menu
 regions[navigation]     = Navigation bar
