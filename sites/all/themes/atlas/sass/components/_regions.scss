@@ -1,3 +1,10 @@
+// top region
+
+.top-wrapper {
+  background: $gray;
+}
+
+
 // header
 .header-wrapper,
 .preface-wrapper {
@@ -9,17 +16,14 @@
 }
 
 .header__logo-image {
-  height: 63px;
-}
-
-.header__logo-image {
   float: left;
-  height: auto;
+  height: 63px;
   margin-right: 1em;
   position: relative;
 }
 
 .header__name-and-slogan {
+  @include element-invisible;
   float: left;
  }
 

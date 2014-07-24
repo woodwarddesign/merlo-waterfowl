@@ -4,16 +4,15 @@
  *
  */
 
-(function ($, Drupal, window, document, undefined) {
-
-
-// To learn about behaviors, see https://drupal.org/node/756722#behaviors
-Drupal.behaviors.my_custom_behavior = {
-  attach: function(context, settings) {
-
-  // start custom
+(function ($, Drupal) {
 
   $(document).ready(function() {
+
+// set top wrapper on front page to be height of screen minus room for menu
+
+var topHeight = $( window ).height();
+$('.top-wrapper').height(topHeight - 50);
+
 
   //set up variable for mobile. set this to keep track of width so functions are run only on transition from
   // mobile to desktop and vice versa. if this isn't done, functions will fire constantly as window is resized
@@ -119,10 +118,5 @@ Drupal.behaviors.my_custom_behavior = {
        $('body').addClass('touch');
     }
 
-// end custom
 
-  }
-};
-
-
-})(jQuery, Drupal, this, this.document);
+})(jQuery, Drupal);

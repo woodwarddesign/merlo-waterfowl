@@ -1,6 +1,7 @@
 <div id="page">
 <div class="top-wrapper">
   <div class="page__top">
+    <span>Big video goes here</span>
     <?php print render($page['top']); ?>
   </div>
 </div>
