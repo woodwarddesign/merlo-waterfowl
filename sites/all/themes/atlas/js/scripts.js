@@ -122,7 +122,7 @@
       $('.front .page-top').html('<video autoplay loop class=\"front-vid\"> <source src=\"/sites/all/themes/atlas/videos/front-video.webm\" type=\"video/webm\">   <source src=\"/sites/all/themes/atlas/videos/front-video.mp4\" type=\"video/mp4\"></video>');
   }
 });
-var v = document.getElementsByTagName("video")[0];
-v.play();
+//var v = document.getElementsByTagName("video")[0];
+//v.play();
 
 })(jQuery, Drupal);
