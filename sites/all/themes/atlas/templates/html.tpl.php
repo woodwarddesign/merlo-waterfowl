@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]><html class="lt-ie9"><![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="ie" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>><![endif]-->
-<!--[if !IE]><!--><html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>><!--<![endif]-->
+<!--[if !IE]><!--><html lang="<?php print $language->language; ?>"><!--<![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <?php print $head; ?>
