@@ -2,8 +2,8 @@
 <div class="top-wrapper">
   <div class="page__top">
     <video autoplay loop poster="/sites/all/themes/atlas/images/video-cover.jpg" class="front-vid">
-      <source src="/sites/all/themes/atlas/videos/SleepingBeePhotojpeg.webm" type="video/webm">
-      <source src="/sites/all/themes/atlas/videos/SleepingBeePhotojpeg.mp4" type="video/mp4">
+      <source src="/sites/all/themes/atlas/videos/front-video.webm" type="video/webm">
+      <source src="/sites/all/themes/atlas/videos/front-video.mp4" type="video/mp4">
     </video>
     <?php print render($page['top']); ?>
   </div>

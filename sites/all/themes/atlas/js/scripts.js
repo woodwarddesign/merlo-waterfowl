@@ -13,6 +13,10 @@
 var topHeight = $( window ).height();
 $('.top-wrapper').height(topHeight - 50);
 
+  // add a class to indicate js enabled on client
+    $('body').addClass('js');
+    $('body').removeClass('no-js');
+
 
   //set up variable for mobile. set this to keep track of width so functions are run only on transition from
   // mobile to desktop and vice versa. if this isn't done, functions will fire constantly as window is resized
@@ -22,8 +26,7 @@ $('.top-wrapper').height(topHeight - 50);
 
   // todo - instead of browser width, this should be based on property at given media query
   function setMobileValue() {
-    var viewport = $(window).width();
-    if (viewport < 970) {
+    if (($("#skip-link").css("position") == "absolute" ) || ($("#skip-link").css("position") == "fixed" )) {
       mobile = 1;
     }
     else {
@@ -55,9 +58,6 @@ $('.top-wrapper').height(topHeight - 50);
   }
 
   fireMobileFunctions();
-
-  // add a class to indicate js enabled on client
-  $('body').addClass('js');
 
   // toggle menu
 
@@ -117,6 +117,12 @@ $('.top-wrapper').height(topHeight - 50);
        $('body').removeClass('no-touch');
        $('body').addClass('touch');
     }
+
+    // insert video instead of picture if desktop display
+    var  videoMarkup = "<video autoplay loop poster=\"/sites/all/themes/atlas/images/video-cover.jpg\" class=\"front-vid\">
+      <source src=\"/sites/all/themes/atlas/videos/front-video.webm\" type=\"video/webm\">
+      <source src=\"/sites/all/themes/atlas/videos/front-video.mp4\" type=\"video/mp4\">
+    </video>";
 
 
 })(jQuery, Drupal);

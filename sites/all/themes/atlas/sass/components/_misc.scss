@@ -13,6 +13,18 @@
   @include clear-it;
 }
 
+// this property is only to signal to js
+
+#skip-link {
+  position: absolute;
+  @include breakpoint ($tab) {
+    position: fixed;
+  }
+  @include breakpoint ($desk) {
+    position: relative;
+  }
+}
+
 // imce crop form
 
 #imce-content .form-item {
