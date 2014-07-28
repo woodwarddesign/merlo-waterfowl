@@ -215,7 +215,7 @@ $databases = array (
   array (
     'default' =>
     array (
-      'database' => 'prometheus',
+      'database' => 'merlo-waterfowl',
       'username' => 'root',
       'password' => 'root',
       'host' => 'localhost',

@@ -4,7 +4,8 @@
   overflow: hidden;
 }
 
-.front-vid {
+.front-vid,
+.front-cover-image img {
   bottom: 0;
   height: auto;
   min-height: 100%;
@@ -12,6 +13,13 @@
   right: 0;
   width: auto;
   z-index: -100;
+}
+
+.header__logo {
+  display: inline-block;
+  position: fixed;
+  left: $vert-spacing;
+  top: $vert-spacing;
 }
 
 // header

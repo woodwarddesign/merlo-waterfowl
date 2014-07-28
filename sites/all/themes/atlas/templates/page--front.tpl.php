@@ -1,6 +1,29 @@
+<script>
+// Picture element HTML5 shiv
+document.createElement( "picture" );
+</script>
 <div id="page">
 <div class="top-wrapper">
+  <?php if ($logo): ?>
+    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+  <?php endif; ?>
   <div class="page-top">
+    <picture class="front-cover-image">
+    	<source media="(min-width: 960px)"
+    		srcset="/sites/all/themes/atlas/images/cover-image-desktop.webp"
+    		type="image/webp">
+    	<source media="(min-width: 960px)"
+    		srcset="/sites/all/themes/atlas/images/cover-image-desktop.jpg">
+        <source media="(min-width: 640px)"
+          srcset="/sites/all/themes/atlas/images/cover-image-tablet.webp"
+          type="image/webp">
+        <source media="(min-width: 640px)"
+          srcset="/sites/all/themes/atlas/images/cover-image-tablet.jpg">
+    	<source
+    		srcset="/sites/all/themes/atlas/images/cover-image-mobile.jpg">
+    	<img
+    		src="/sites/all/themes/atlas/images/cover-image-desktop.jpg" alt="Merlo waterfowl">
+    </picture>
     <?php print render($page['top']); ?>
   </div>
 </div>
@@ -8,12 +31,8 @@
     <header class="header grid-container" id="header" role="banner">
       <div class="branding-wrapper">
       <div class="region region-branding">
-        <?php if ($logo): ?>
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
-        <?php endif; ?>
-
-        <?php if ($site_name || $site_slogan): ?>
-          <div class="header__name-and-slogan" id="name-and-slogan">
+            <?php if ($site_name || $site_slogan): ?>
+              <div class="header__name-and-slogan" id="name-and-slogan">
             <?php if ($site_name): ?>
               <h1 class="site-name">
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><?php print $site_name; ?></a>

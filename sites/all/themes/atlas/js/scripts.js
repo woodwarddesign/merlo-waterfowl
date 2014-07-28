@@ -10,8 +10,8 @@
 
 // set top wrapper on front page to be height of screen minus room for menu
 
-var topHeight = $( window ).height();
-$('.top-wrapper').height(topHeight - 50);
+  var topHeight = $( window ).height();
+  $('.page-top').height(topHeight);
 
   // add a class to indicate js enabled on client
     $('body').addClass('js');
@@ -107,8 +107,6 @@ $('.top-wrapper').height(topHeight - 50);
       fireMobileFunctions();
     });
 
-		});
-
     function is_touch_device() {
      return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
     }
@@ -118,11 +116,13 @@ $('.top-wrapper').height(topHeight - 50);
        $('body').addClass('touch');
     }
 
-    // insert video instead of picture if desktop display
-    var  videoMarkup = "<video autoplay loop poster=\"/sites/all/themes/atlas/images/video-cover.jpg\" class=\"front-vid\">
-      <source src=\"/sites/all/themes/atlas/videos/front-video.webm\" type=\"video/webm\">
-      <source src=\"/sites/all/themes/atlas/videos/front-video.mp4\" type=\"video/mp4\">
-    </video>";
-
+    // insert video instead of picture element if desktop display
+    if (mobile === 0) {
+      $('.front-cover-image').remove();
+      $('.front .page-top').html('<video autoplay loop class=\"front-vid\"> <source src=\"/sites/all/themes/atlas/videos/front-video.webm\" type=\"video/webm\">   <source src=\"/sites/all/themes/atlas/videos/front-video.mp4\" type=\"video/mp4\"></video>');
+  }
+});
+var v = document.getElementsByTagName("video")[0];
+v.play();
 
 })(jQuery, Drupal);
