@@ -12,6 +12,24 @@
     $('body').addClass('js');
     $('body').removeClass('no-js');
 
+    // set top wrapper on front page to be height of screen minus room for menu
+
+      var topHeight = $( window ).height();
+      var topWidth = $( window ).width();
+      var textContainer = $('.top-text');
+      $('.page-top, .front-cover-image').height(topHeight);
+      var textBoxWidth = $('.top-text').width();
+      $('.top-text').css({'top':topHeight * 0.4, 'left': (topWidth/2) - (textBoxWidth/2)});
+
+      $(window).resize(function() {
+        $('.top-text').css({'top':$( window ).height() * 0.4, 'left': ($( window ).width()/2) - (textBoxWidth/2)});
+      });
+
+      $('.top-text a').click(function() {
+        $('#start').velocity("scroll", { duration: 700, easing: "ease-in-out" });
+      });
+
+
 
   //set up variable for mobile. set this to keep track of width so functions are run only on transition from
   // mobile to desktop and vice versa. if this isn't done, functions will fire constantly as window is resized
@@ -111,19 +129,13 @@
        $('body').addClass('touch');
     }
 
-    // set top wrapper on front page to be height of screen minus room for menu
-
-      var topHeight = $( window ).height();
-      var topWidth = $( window ).width();
-      $('.page-top').height(topHeight);
-      var textBoxWidth = $('.top-text').width();
-      $('.top-text').css({'top':topHeight * 0.4, 'left': (topWidth/2) - (textBoxWidth/2)});
 
     // insert video instead of picture element if desktop display
     if (mobile === 0) {
       $('.front-cover-image').remove();
       $('.front .page-top').html('<video autoplay loop poster=\"/sites/all/themes/atlas/images/video-cover.jpg\" class=\"front-vid\"> <source src=\"/sites/all/themes/atlas/videos/front-video.webm\" type=\"video/webm\">   <source src=\"/sites/all/themes/atlas/videos/front-video.mp4\" type=\"video/mp4\"></video>');
   }
+
 
 });
 

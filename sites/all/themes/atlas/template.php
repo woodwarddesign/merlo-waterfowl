@@ -13,7 +13,7 @@ function atlas_preprocess_html(&$variables, $hook) {
 
   drupal_add_css('http://fonts.googleapis.com/css?family=Roboto:300,400,500', array('type' => 'external', 'weight' => 0,));
 
-  drupal_add_js(drupal_get_path('theme', 'atlas') .'/js/picturefill.js');
+  drupal_add_js(drupal_get_path('theme', 'atlas') .'/js/velocity.js');
   drupal_add_js(drupal_get_path('theme', 'atlas') .'/js/scripts.js');
 
   // get rid of .no-sidebars class that Drupal adds

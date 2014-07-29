@@ -1,36 +1,16 @@
-<script>
-// Picture element HTML5 shiv
-document.createElement( "picture" );
-</script>
 <div id="page">
 <div class="top-wrapper">
   <?php if ($logo): ?>
-    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo">Logo</a>
   <?php endif; ?>
   <div class="top-text">
     <h2 class="top-slogan">For the discerning sportsman</h2>
-    <a href="#header-wrap">click</a>
+    <a href="#start">click</a>
   </div>
   <div class="page-top">
-    <picture class="front-cover-image">
-    	<source media="(min-width: 960px)"
-    		srcset="/sites/all/themes/atlas/images/cover-image-desktop.webp"
-    		type="image/webp">
-    	<source media="(min-width: 960px)"
-    		srcset="/sites/all/themes/atlas/images/cover-image-desktop.jpg">
-        <source media="(min-width: 640px)"
-          srcset="/sites/all/themes/atlas/images/cover-image-tablet.webp"
-          type="image/webp">
-        <source media="(min-width: 640px)"
-          srcset="/sites/all/themes/atlas/images/cover-image-tablet.jpg">
-    	<source
-    		srcset="/sites/all/themes/atlas/images/cover-image-mobile.jpg">
-    	<img
-    		src="/sites/all/themes/atlas/images/cover-image-desktop.jpg" alt="Merlo waterfowl">
-    </picture>
   </div>
 </div>
-  <div id="header-wrap" class="header-wrapper">
+  <div id="start" class="header-wrapper">
     <header class="header grid-container" id="header" role="banner">
       <div class="branding-wrapper">
       <div class="region region-branding">
