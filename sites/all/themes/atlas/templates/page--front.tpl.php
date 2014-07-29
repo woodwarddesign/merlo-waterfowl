@@ -7,6 +7,10 @@ document.createElement( "picture" );
   <?php if ($logo): ?>
     <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
   <?php endif; ?>
+  <div class="top-text">
+    <h2 class="top-slogan">For the discerning sportsman</h2>
+    <a href="#header-wrap">click</a>
+  </div>
   <div class="page-top">
     <picture class="front-cover-image">
     	<source media="(min-width: 960px)"
@@ -24,10 +28,9 @@ document.createElement( "picture" );
     	<img
     		src="/sites/all/themes/atlas/images/cover-image-desktop.jpg" alt="Merlo waterfowl">
     </picture>
-    <?php print render($page['top']); ?>
   </div>
 </div>
-  <div class="header-wrapper">
+  <div id="header-wrap" class="header-wrapper">
     <header class="header grid-container" id="header" role="banner">
       <div class="branding-wrapper">
       <div class="region region-branding">

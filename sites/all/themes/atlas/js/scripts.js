@@ -8,11 +8,6 @@
 
   $(document).ready(function() {
 
-// set top wrapper on front page to be height of screen minus room for menu
-
-  var topHeight = $( window ).height();
-  $('.page-top').height(topHeight);
-
   // add a class to indicate js enabled on client
     $('body').addClass('js');
     $('body').removeClass('no-js');
@@ -116,11 +111,20 @@
        $('body').addClass('touch');
     }
 
+    // set top wrapper on front page to be height of screen minus room for menu
+
+      var topHeight = $( window ).height();
+      var topWidth = $( window ).width();
+      $('.page-top').height(topHeight);
+      var textBoxWidth = $('.top-text').width();
+      $('.top-text').css({'top':topHeight * 0.4, 'left': (topWidth/2) - (textBoxWidth/2)});
+
     // insert video instead of picture element if desktop display
     if (mobile === 0) {
       $('.front-cover-image').remove();
       $('.front .page-top').html('<video autoplay loop poster=\"/sites/all/themes/atlas/images/video-cover.jpg\" class=\"front-vid\"> <source src=\"/sites/all/themes/atlas/videos/front-video.webm\" type=\"video/webm\">   <source src=\"/sites/all/themes/atlas/videos/front-video.mp4\" type=\"video/mp4\"></video>');
   }
+
 });
 
 })(jQuery, Drupal);
