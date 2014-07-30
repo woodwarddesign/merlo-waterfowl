@@ -14,9 +14,10 @@
 
     // set top wrapper on front page to be height of screen minus room for menu
 
-      var topHeight = $( window ).height();
-      var topWidth = $( window ).width();
+      var topHeight = $(window).height();
+      var topWidth = $(window).width();
       var textContainer = $('.top-text');
+      var mediaContainer = $('.page-top');
       $('.page-top, .front-cover-image').height(topHeight);
       var textBoxWidth = $('.top-text').width();
       $('.top-text').css({'top':topHeight * 0.4, 'left': (topWidth/2) - (textBoxWidth/2)});
@@ -24,12 +25,10 @@
       $(window).resize(function() {
         $('.top-text').css({'top':$( window ).height() * 0.4, 'left': ($( window ).width()/2) - (textBoxWidth/2)});
       });
-
+      // smooth scroll from top video/image to content
       $('.top-text a').click(function() {
         $('#start').velocity("scroll", { duration: 700, easing: "ease-in-out" });
       });
-
-
 
   //set up variable for mobile. set this to keep track of width so functions are run only on transition from
   // mobile to desktop and vice versa. if this isn't done, functions will fire constantly as window is resized
