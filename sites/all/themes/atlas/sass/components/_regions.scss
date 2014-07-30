@@ -14,6 +14,7 @@
   z-index: -100;
 }
 
+// tried changing only the values that change at breakpoints, but doesn't work. needs all rules.
 .page-top {
   position: relative;
   background: url(/sites/all/themes/atlas/images/cover-image-mobile.jpg) no-repeat center center scroll;
@@ -24,6 +25,13 @@
   background-size: cover;
   z-index: -101;
   @include breakpoint($tab) {
+    background: url(/sites/all/themes/atlas/images/cover-image-tablet.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  @include breakpoint($desk) {
     background: url(/sites/all/themes/atlas/images/cover-image-tablet.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
