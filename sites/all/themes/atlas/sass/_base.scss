@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height:100%;
+}
+
 body {
   color: $text-color;
   font-size: $base-font-size * .85;

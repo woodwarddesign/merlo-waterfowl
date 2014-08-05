@@ -24,15 +24,24 @@ ul li.leaf {
   }
 }
 
-.js .main-menu-1 {
-  max-height: 0;
-  overflow: hidden;
-  &.toggled {
-    max-height: 50em;
+.main-menu-1 {
+  bottom: 0;
+  padding-top: 6rem;
+  position: absolute;
+  right: -300px;
+  top: 0;
+  height: 100%;
+  width: 300px;
+  z-index: 1;
+  @include breakpoint($desk) {
   }
   &.main-menu-2 {
     width: 200%;
   }
+}
+
+.no-js .main-menu-1 {
+  right: 0;
 }
 
 // multi-toggle styles
@@ -41,14 +50,16 @@ a.menu-link {
   background: url('../images/menu-icon.svg') no-repeat scroll 10px .9em $accent;
   color: $white !important;
   display: block;
-  float: left;
+  right: $vert-spacing * 1.5;
   padding: .5em .5em .5em 40px;
+  position: absolute;
+  top: $vert-spacing;
+  z-index: 10;
 }
 
 .main-menu-1 {
   background: $light-gray;
   clear: both;
-  width: 100%;
   ul {
     clear: both;
   }
@@ -131,7 +142,6 @@ footer .region-footer p a.toggled {
 }
 
 .js .main-menu-2 {
-  max-height: 0;
   overflow: hidden;
   @include trans-all;
   &.toggled {
@@ -143,92 +153,92 @@ footer .region-footer p a.toggled {
 
 @include breakpoint($desk) {
 
-  	.main-menu-1 {
-  		text-align: right;
-  	}
-
-  .js .main-menu-1 {
-    background-color: $white;
-    max-height: none;
-    overflow: visible;
-    z-index: 1000;
-  }
-
-    .main-menu-1 {
-      margin-top: 0;
-    }
-
-  .main-menu-1 li.expanded > a:after {
-    content: '';
-  }
-
-  .main-menu-1 li.expanded > a.toggled:after {
-    content: '';
-  }
-
-  .main-menu-1 li.expanded > a:after {
-    content: '';
-  }
-
-  .main-menu-1 li.expanded {
-    padding-bottom: .5em;
-  }
-
-  .main-menu-1 li  {
-    border-top: none;
-    padding: .5em 1em;
-  }
-
-  .main-menu-1 > ul li  {
-    &.first {
-      padding-left: 0;
-    }
-    &.last {
-      border-right: none;
-      padding-right: 0;
-    }
-  }
-
-  .main-menu-1 li {
-    display: inline-block;
-    font-size: $base-font-size * .7;
-    position: relative;
-    font-weight: 300;
-  }
-
-  a.menu-link {
-      display: none;
-  }
-
-  .main-menu-1 ul {
-    display: none;
-  }
-
-  .main-menu-1 li:hover > ul {
-    display: block;
-  }
-
-  .js .main-menu-1 .main-menu-2  {
-    border: 1px solid $light-gray;
-    left: 7em;
-    max-height: 50em;
-		position: absolute;
-		top: 1.75em;
-		text-align: left;
-		width: 12em;
-    li {
-      border-right: none;
-      display: inline-block;
-      margin-left: -5.25em;
-      overflow: hidden;
-      padding-left: .75em;
-      position: relative;
-      width: 15.2em;
-      a {
-        display: block;
-      }
-    }
-	}
+  // 	.main-menu-1 {
+  // 		text-align: right;
+  // 	}
+  //
+  // .js .main-menu-1 {
+  //   background-color: $white;
+  //   max-height: none;
+  //   overflow: visible;
+  //   z-index: 1000;
+  // }
+  //
+  //   .main-menu-1 {
+  //     margin-top: 0;
+  //   }
+  //
+  // .main-menu-1 li.expanded > a:after {
+  //   content: '';
+  // }
+  //
+  // .main-menu-1 li.expanded > a.toggled:after {
+  //   content: '';
+  // }
+  //
+  // .main-menu-1 li.expanded > a:after {
+  //   content: '';
+  // }
+  //
+  // .main-menu-1 li.expanded {
+  //   padding-bottom: .5em;
+  // }
+  //
+  // .main-menu-1 li  {
+  //   border-top: none;
+  //   padding: .5em 1em;
+  // }
+  //
+  // .main-menu-1 > ul li  {
+  //   &.first {
+  //     padding-left: 0;
+  //   }
+  //   &.last {
+  //     border-right: none;
+  //     padding-right: 0;
+  //   }
+  // }
+  //
+  // .main-menu-1 li {
+  //   display: inline-block;
+  //   font-size: $base-font-size * .7;
+  //   position: relative;
+  //   font-weight: 300;
+  // }
+  //
+  // a.menu-link {
+  //     display: none;
+  // }
+  //
+  // .main-menu-1 ul {
+  //   display: none;
+  // }
+  //
+  // .main-menu-1 li:hover > ul {
+  //   display: block;
+  // }
+  //
+  // .js .main-menu-1 .main-menu-2  {
+  //   border: 1px solid $light-gray;
+  //   left: 7em;
+  //   max-height: 50em;
+	// 	position: absolute;
+	// 	top: 1.75em;
+	// 	text-align: left;
+	// 	width: 12em;
+  //   li {
+  //     border-right: none;
+  //     display: inline-block;
+  //     margin-left: -5.25em;
+  //     overflow: hidden;
+  //     padding-left: .75em;
+  //     position: relative;
+  //     width: 15.2em;
+  //     a {
+  //       display: block;
+  //     }
+  //   }
+	// }
 
 } //end media query
 

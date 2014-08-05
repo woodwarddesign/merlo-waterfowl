@@ -3,6 +3,12 @@
   <?php if ($logo): ?>
     <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo">Logo</a>
   <?php endif; ?>
+  <?php if($main_menu): ?>
+    <div class="region-menu">
+     <a href="#menu" class="menu-link not-toggled">Menu</a>
+     <?php print render($page['menu']); ?>
+   </div>
+  <?php endif; ?>
   <div class="top-text">
     <h2 class="top-slogan">For the discerning sportsman</h2>
     <a href="#start">click</a>
@@ -29,14 +35,6 @@
             <?php endif; ?>
             <?php print render($page['branding']); ?>
       </div>
-    </div>
-    <div class="menu-wrapper">
-       <?php if($main_menu): ?>
-       <div class="region-menu">
-        <a href="#menu" class="menu-link">Menu</a>
-        <?php print render($page['menu']); ?>
-      </div>
-     <?php endif; ?>
     </div>
     </header>
   </div>

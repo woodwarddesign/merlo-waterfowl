@@ -12,6 +12,32 @@
     $('body').addClass('js');
     $('body').removeClass('no-js');
 
+    // toggle menu position on click
+
+    $('.menu-link').click(function(e) {
+      e.preventDefault();
+
+      var $menu = $('.main-menu-1');
+      $menu.height($(document).height());
+
+      if ($menu.hasClass('toggled')) {
+        // hide menu
+        $menu.velocity({
+          properties: { right: '-300px' },
+          options: { duration: 300, easing: 'ease-in-out' }
+        });
+        $menu.removeClass('toggled');
+      }
+      else {
+        // show menu
+        $menu.velocity({
+          properties: { right: '0' },
+          options: { duration: 400 }
+        });
+        $menu.addClass('toggled');
+      }
+    });
+
     // set top wrapper on front page to be height of screen minus room for menu
 
       var topHeight = $(window).height();
@@ -27,6 +53,7 @@
       });
       // smooth scroll from top video/image to content
       $('.top-text a').click(function() {
+        event.preventDefault();
         $('#start').velocity("scroll", { duration: 700, easing: "ease-in-out" });
       });
 
@@ -61,62 +88,15 @@
       //turn 'off' so that it will run again if resized to mobile
       functionStatus = 0;
       removeMobileMenuItem();
-      // unbind click events from toglleMenu function
-      $('.menu-link').unbind();
-      $('.expanded > a').unbind();
-      //remove toggled class
-      $('a, ul').removeClass('toggled');
+
     }
   }
 
   fireMobileFunctions();
 
-  // toggle menu
-
-  // the toggle menu doesn't allow the first element to act as a link - it's instead a toggle.
-  // the bit below copies the parent link and adds it to the child ul so that the page is accessible
-  function addMobileMenuItem() {
-    $links = $('li.expanded').children('a:first-child');
-    if ($links.length > 0){
-      $links.each(function(i,link) {
-        $(link).next().prepend($('<li></li>').append($(link).clone()))
-      })
-    }
-  }
-
-  //remove any items that have been added on resize when going back to desktop width
-  function removeMobileMenuItem() {
-    $("li.expanded").each(function() {
-       var menuParent = $(this).children('a').text();
-       var firstChildItem = $(this).find(".main-menu-2 li:first-child a").text();
-       if (menuParent == firstChildItem){
-       $(this).find(".main-menu-2 li:first-child").remove();
-       }
-    });
-  }
-
-  function toggleMenu() {
-      // add the toggle classes
-		  var $menu = $('.main-menu-1'),
-  	  $menulink = $('.menu-link'),
-  	  $menuTrigger = $('.expanded > a');
-
-      $menulink.click(function(e) {
-        e.preventDefault();
-        $menulink.toggleClass('toggled');
-        $menu.toggleClass('toggled');
-      });
-
-  		$menuTrigger.click(function(e) {
-  			e.preventDefault();
-  			var $this = $(this);
-  			$this.toggleClass('toggled').next('ul').toggleClass('toggled');
-  		});
-  }
-
-    $(window).resize(function() {
-      setMobileValue();
-      fireMobileFunctions();
+  $(window).resize(function() {
+    setMobileValue();
+    fireMobileFunctions();
     });
 
     function is_touch_device() {

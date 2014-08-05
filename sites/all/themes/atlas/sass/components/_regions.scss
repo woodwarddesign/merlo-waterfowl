@@ -14,6 +14,16 @@
   z-index: -100;
 }
 
+.region-menu {
+  position: absolute;
+  text-align: right;
+}
+
+.region-menu,
+.menu-block-wrapper {
+  height: 100%;
+}
+
 // tried changing only the values that change at breakpoints, but doesn't work. needs all rules.
 .page-top {
   position: relative;
@@ -77,10 +87,6 @@
 .header-wrapper,
 .preface-wrapper {
   width: 100%;
-}
-
-.header-wrapper {
-  padding-top: 1rem;
 }
 
 .header__logo-image {
